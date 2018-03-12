@@ -1,4 +1,4 @@
-public interface Generica {
+public interface Generic {
 
     public String toString();
     
