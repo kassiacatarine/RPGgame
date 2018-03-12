@@ -1,4 +1,4 @@
-public abstract class Criatura {
+public abstract class Criatura implements Generica{
 
     public Criatura(String nome, String classe, int nivel, int vida, int magia, int forca, int agilidade, int destreza, int inteligencia, int carisma) {
         this.nome = nome;
@@ -124,4 +124,13 @@ public abstract class Criatura {
     }
     
     public abstract void descansar();
+
+    public String toString(){
+        return "a"; //a tratar  
+   }
+    
+    public void call(){
+    
+    }
+    
  }
