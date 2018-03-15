@@ -1,16 +1,28 @@
 public class Hero extends Creature {
+    
+    private int bless;
+    
+    public int getBless(){
+        return bless;
+    }
+    public void setBless(int bless){
+        this.bless = bless;
+    }
 
-    public Hero(String name, String race, int level, int life, int magic,
-            int strenght, int agility, int skill, int intelligence, int charisma) {
-        super(name, race, level, life, magic, strenght, agility, skill, intelligence, charisma);
+    public Hero(String name, String race, int level, 
+                int life, int spell, int strenght, 
+                int agility, int skill, int intelligence,
+                int charisma, int bless) {
+        super(name, race, level, life, spell, strenght, agility, skill, intelligence, charisma);
+        this.bless = bless;
     }
 
     public void Rest(Hero Revitalize) {
         float rev;
-        rev = (Revitalize.getLife() + Revitalize.getMagic()) / 2;
+        rev = (Revitalize.getLife() + Revitalize.getSpell()) / 2;
         if (rev >= 20){
             Revitalize.setLife(85);
-            Revitalize.setMagic(85);
+            Revitalize.setSpell(85);
         }
     }
 
