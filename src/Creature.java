@@ -1,6 +1,9 @@
 public abstract class Creature implements Generic{
 
-    public Creature(String name, String race, int level, int life, int spell, int strenght, int agility, int skill, int intelligence, int charisma) {
+    public Creature(String name, String race,
+                    int level, int life, int spell, 
+                    int strenght, int agility, int skill, 
+                    int intelligence, int charisma) {
         this.name = name;
         this.race = race;
         this.level = level;
@@ -12,7 +15,7 @@ public abstract class Creature implements Generic{
         this.intelligence = intelligence;
         this.charisma = charisma;
     }
-        private String name;
+    private String name;
 	private String race;
 	private int level;
 	private int life;
@@ -146,13 +149,16 @@ public abstract class Creature implements Generic{
     public float attack(){
         return 0;
     }
-    public float defend(){
-         return 0;
+    public float defense(){
+        return 0;
     }
     
     public boolean alive(){
-        
-        return true;
+        if (getLife() > 0){
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public void losesLife(){
