@@ -44,7 +44,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        if (level > 0 && level < 11 ){
+            this.level = level;
+        } else{
+            throw new IllegalArgumentException
+            ("Level value is invalid, it needs to be more than 0 and equal or less then 10");
+        }
     }
 
     public int getLife() {
@@ -52,7 +57,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setLife(int life) {
-        this.life = life;
+        if (life > 0 && life < 101 ){
+            this.life = life;
+        } else{
+            throw new IllegalArgumentException
+            ("Life value is invalid, it needs to be more than 0 and equal or less then 100");
+        }
     }
 
     public int getSpell() {
@@ -60,7 +70,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setSpell(int spell) {
-        this.spell = spell;
+        if (spell > 0 && spell < 101 ){
+            this.spell = spell;
+        } else{
+            throw new IllegalArgumentException
+            ("spell value is invalid, it needs to be more than 0 and equal or less then 100");
+        }
     }
 
     public int getStrenght() {
@@ -68,7 +83,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setStrenght(int strenght) {
-        this.strenght = strenght;
+        if (strenght > 0 && strenght < 33 ){
+            this.strenght = strenght;
+        } else{
+            throw new IllegalArgumentException
+            ("Strenght value is invalid, it needs to be more than 0 and equal or less than 32");
+        }
     }
 
     public int getAgility() {
@@ -76,7 +96,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setAgility(int agility) {
-        this.agility = agility;
+        if (agility > 0 && agility < 13 ){
+            this.agility = agility;
+        } else{
+            throw new IllegalArgumentException
+            ("Agility value is invalid, it needs to be more than 0 and equal or less than 12");
+        }
     }
 
     public int getSkill() {
@@ -84,7 +109,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setSkill(int skill) {
-        this.skill = skill;
+        if (skill > 0 && skill < 17 ){
+            this.skill = skill;
+        } else{
+            throw new IllegalArgumentException
+            ("Skill value is invalid, it needs to be more than 0 and equal or less than 16");
+        }
     }
 
     public int getIntelligence() {
@@ -92,7 +122,12 @@ public abstract class Creature implements Generic{
     }
 
     public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
+        if (intelligence > 0 && intelligence < 21 ){
+            this.intelligence = intelligence;
+        } else{
+            throw new IllegalArgumentException
+            ("Intelligence value is invalid, it needs to be more than 0 and equal or less than 20");
+        }
     }
 
     public int getCharisma() {
@@ -100,14 +135,19 @@ public abstract class Creature implements Generic{
     }
 
     public void setCharisma(int charisma) {
-        this.charisma = charisma;
+        if (charisma > 0 && charisma < 13 ){
+            this.charisma = charisma;
+        } else{
+            throw new IllegalArgumentException
+            ("Charisma value is invalid, it needs to be more than 0 and equal or less than 12");
+        }
     }
     
-    public float atack(){
+    public float attack(){
         return 0;
     }
     public float defend(){
-        return 0;
+         return 0;
     }
     
     public boolean alive(){
