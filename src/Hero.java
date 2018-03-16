@@ -17,23 +17,15 @@ public class Hero extends Creature {
         this.bless = bless;
     }
 
-    public void Rest(Hero Revitalize) {
-        float rev;
-        rev = (Revitalize.getLife() + Revitalize.getSpell()) / 2;
-        if (rev >= 20){
-            Revitalize.setLife(85);
-            Revitalize.setSpell(85);
-        }
+    public String toString(){
+        String text = super.toString();
+        text += "\nBençao: "+this.bless;
+        
+        return text;
     }
-
+ 
     @Override
     public float rest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ((this.getLife() + this.getLevel() + this.getBless()) / 3) * this.generateConstRand();
     }
-
-    @Override
-    public void call() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
