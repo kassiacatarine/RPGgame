@@ -9,20 +9,27 @@ public class Confrontation {
     private HashMap<String, Hero> heroes;
     private HashMap<String, Monster> monsters;
     private Battle battle;
+    private ExitOnEnter enter;
 
     public Confrontation() {
         bCharacter = new BuildCharacter();
         heroes = bCharacter.listHeroes();
         monsters = bCharacter.listMonsters();
         battle = new Battle();
+        enter = new ExitOnEnter();
     }
 
     public void init() {
         Creature winnerFirst = callBattle(monsters.get("montaro"), heroes.get("dark-glorysson"));
+        enter.listener();
         Creature winnerSecond = callBattle(monsters.get("matilda"), heroes.get("mellayne"));
+        enter.listener();
         Creature winnerThird = callBattle(monsters.get("lord-black"), heroes.get("gryin"));
+        enter.listener();
         Creature winnerLast = callBattle(winnerFirst, winnerSecond);
+        enter.listener();
         Creature winnerFinished = callBattle(winnerThird, winnerLast);
+        enter.listener();
         championshipFinished(winnerFinished);
     }
 
