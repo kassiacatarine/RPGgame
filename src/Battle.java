@@ -3,9 +3,11 @@
  */
 public class Battle {
 
-    private int roundStatus = 0;
+    private int roundStatus;
 
     public Creature battleStart(Creature monster, Creature hero) {
+        roundStatus = 0;
+        System.out.println("|------------------------ Beginning of the Battle ------------------------|");
         do {
             roundStatus++;
             this.roundStart(monster, hero);
