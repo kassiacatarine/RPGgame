@@ -34,14 +34,14 @@ public class Confrontation {
     }
 
     public Creature callBattle(Creature first, Creature second) {
-        first.toString();
-        second.toString();
+        System.out.println(first.toString());
+        System.out.println(second.toString());
         return battle.battleStart(first, second);
     }
 
     public void championshipFinished(Creature winner) {
         System.out.println("|------------------------ Championship Finished ------------------------|");
         System.out.println();
-        winner.toString();
+        System.out.println(winner.toString());
     }
 }
