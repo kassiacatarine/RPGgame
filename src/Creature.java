@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 public abstract class Creature implements Generic{
 
     public Creature(String name, String race,
@@ -166,17 +169,32 @@ public abstract class Creature implements Generic{
     }
     
     public void revitalize(){
-    
+        if(this.rest() > 20){
+            this.setLife(this.getLife() + 50);
+            this.setSpell(this.getSpell() + 30);
+        }
     }
     
     public abstract float rest();
 
     public String toString(){
-        return "a"; //to treat
+       String text = "";
+       text += "Nome: " + this.getName();
+       text += "\nClasse: " + this.getRace();
+       text += "\nNivel: " + this.getLevel();
+       text += "\nVida: " + this.getLife();
+       text += "\nMagia: " + this.getSpell();
+       text += "\nForça: " + this.getStrenght();
+       text += "\nAgilidade: " + this.getAgility();
+       text += "\nDestreza: " + this.getSkill();
+       text += "\nInteligencia: " + this.getIntelligence();
+       text += "\nCarisma: " + this.getCharisma();
+       
+       return text;
    }
     
-    public void call(){
-    
-    }
-    
+    public float generateConstRand() { 
+        Random r = new Random();
+        return (float) (1.10 + (1.66 - 1.10) * r.nextFloat());
+    } 
  }

@@ -6,22 +6,8 @@ public class Monster extends Creature {
     }
    
 
-    public void Rest(Monster Revitalize) {
-        float rev;
-        rev = (Revitalize.getLife() + Revitalize.getMagic()) / 2;
-        if (rev >= 20){
-            Revitalize.setLife(80);
-            Revitalize.setMagic(80);
-        }
-    }
-
     @Override
     public float rest() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void call() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ((this.getLife() + this.getLevel()) / 2) * this.generateConstRand();
     }
 }
