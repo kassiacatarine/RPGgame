@@ -10,7 +10,8 @@ public class Battle {
             roundStatus++;
             this.roundStart(monster, hero);
         } while (monster.alive() && hero.alive());
-        (monster.alive()) ? this.battleWinner(monster) : this.battleWinner(hero);
+        Creature creature = monster.alive() ? monster : hero;
+        this.battleWinner(creature);
     }
 
     public void roundStart(Monster monster, Hero hero) {
