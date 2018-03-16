@@ -171,7 +171,7 @@ public abstract class Creature implements Generic{
     }
     
     public void losesLife(){
-    
+        life -= 8;
     }
     
     public void revitalize(){
