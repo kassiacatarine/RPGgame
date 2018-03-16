@@ -10,14 +10,14 @@ public class Battle {
             roundStatus++;
             this.roundStart(monster, hero);
         } while (monster.alive() && hero.alive());
-        monster.alive() ? this.battleWinner(monster) : this.battleWinner(hero);
+        (monster.alive()) ? this.battleWinner(monster) : this.battleWinner(hero);
     }
 
     public void roundStart(Monster monster, Hero hero) {
         this.roundHeader();
         this.attackRound(monster, hero);
         if (hero.alive()) {
-            this.attackRound(hero, moster);
+            this.attackRound(hero, monster);
         }
     }
 
@@ -55,7 +55,7 @@ public class Battle {
         System.out.println("|------------------------ Battle Finished ------------------------|");
         System.out.println();
         System.out.println(winner.getName() +" Ganhou a batalha.");
-        if (this.winnerRest(winner)) {
+        if (this.winnerRest(winner.rest())) {
             System.out.println(winner.getName() +" Pode descansar.");
             winner.revitalize();
         } else {
