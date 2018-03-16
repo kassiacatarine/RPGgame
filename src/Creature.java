@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import java.math.BigDecimal;
 
 public abstract class Creature implements Generic{
 
@@ -150,14 +151,24 @@ public abstract class Creature implements Generic{
     }
     
     public float attack(){
-        return 0;
+    //--------r with 2 decimals
+        Random random = new Random();
+        float coef = (float) ((float) 1.10 + (1.66 - 1.10) * random.nextFloat()); //random number with n decimal points 
+        BigDecimal bd = new BigDecimal(coef);   //using bigdecimal to convert to .2f
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP); //function library
+        float r; //
+        r = bd.floatValue(); // r with 2 decimal points
+    // ----------
+        return (float) ((this.getLevel() + this.getStrenght() + 
+                this.getAgility() + (this.getSpell() * 0.1)) * r );
+
     }
     public float defense(){
         return 0;
     }
     
     public boolean alive(){
-        if (getLife() > 0){
+        if (this.getLife() > 0){
             return true;
         } else {
             return false;
