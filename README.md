@@ -21,24 +21,27 @@
 ## Grupo
 
 - Kássia Catarine
-- Felipe
-- Adnilson
+- Felipe Kamimura
+- Adenilson
+- Caroline Correa
 
 ## Divisão de Tarefas
 
-    Responsável: 
+    Responsável: Kássia Catarine
     - Confronto (Classe)
-    - Genérica (Classe)
     - PerdeVida (Método)
 
-    Responsável: 
+    Responsável: Felipe Kamimura
     - Aplicar restrições nos atributos da criatura
     - Atacar (Método)
     - Vivo (Método)
-    - Criar Herois
 
-    Responsável: 
-    - Descansar (Método)
+    Responsável: Adenilson
     - Defender (Método)
     - Revitalizar (Método)
+
+    Resposável: Caroline Correa
+    - Criar Herois
     - Criar Monstros
+    - Descansar (Método)
+    - Genérica (Classe)
