@@ -151,20 +151,15 @@ public abstract class Creature implements Generic{
     }
     
     public float attack(){
-    //--------r with 2 decimals
-        Random random = new Random();
-        float coef = (float) ((float) 1.10 + (1.66 - 1.10) * random.nextFloat()); //random number with n decimal points 
-        BigDecimal bd = new BigDecimal(coef);   //using bigdecimal to convert to .2f
-        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP); //function library
-        float r; //
-        r = bd.floatValue(); // r with 2 decimal points
-    // ----------
+        float r = (generateConstRand());
         return (float) ((this.getLevel() + this.getStrenght() + 
                 this.getAgility() + (this.getSpell() * 0.1)) * r );
 
     }
     public float defense(){
-        return 0;
+        float r = (generateConstRand());
+        return (float) ((this.getAgility() + (this.getSkill() * 0.7) +
+                            this.getIntelligence()) * r + 10);
     }
     
     public boolean alive(){
@@ -205,7 +200,12 @@ public abstract class Creature implements Generic{
    }
     
     public float generateConstRand() { 
-        Random r = new Random();
-        return (float) (1.10 + (1.66 - 1.10) * r.nextFloat());
+
+        Random random = new Random();
+        float coef = (float) ((float) 1.10 + (1.66 - 1.10) * random.nextFloat()); //random number with n decimal points 
+        BigDecimal bd = new BigDecimal(coef);   //using bigdecimal to convert to .2f
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP); //function library
+        return bd.floatValue(); // r with 2 decimal points
+
     } 
  }
