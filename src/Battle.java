@@ -5,16 +5,17 @@ public class Battle {
 
     private int roundStatus = 0;
 
-    public void battleStart(Monster monster, Hero hero) {
+    public Creature battleStart(Creature monster, Creature hero) {
         do {
             roundStatus++;
             this.roundStart(monster, hero);
         } while (monster.alive() && hero.alive());
         Creature creature = monster.alive() ? monster : hero;
         this.battleWinner(creature);
+        return creature;
     }
 
-    public void roundStart(Monster monster, Hero hero) {
+    public void roundStart(Creature monster, Creature hero) {
         this.roundHeader();
         this.attackRound(monster, hero);
         if (hero.alive()) {
