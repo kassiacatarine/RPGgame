@@ -35,6 +35,7 @@ public class Confrontation {
 
     public Creature callBattle(Creature first, Creature second) {
         System.out.println(first.toString());
+        System.out.println();
         System.out.println(second.toString());
         return battle.battleStart(first, second);
     }
@@ -43,5 +44,6 @@ public class Confrontation {
         System.out.println("|------------------------ Championship Finished ------------------------|");
         System.out.println();
         System.out.println(winner.toString());
+        System.out.println("\n\n");
     }
 }

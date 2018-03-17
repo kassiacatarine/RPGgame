@@ -66,9 +66,10 @@ public abstract class Creature implements Generic{
     public void setLife(int life) {
         if (life > 0 && life < 101 ){
             this.life = life;
-        } else{
-            throw new IllegalArgumentException
-            ("Life value is invalid, it needs to be more than 0 and equal or less then 100");
+        } else if (life > 100) {
+            this.life = 100;
+        } else {
+            this.life = 0;
         }
     }
 
@@ -79,9 +80,10 @@ public abstract class Creature implements Generic{
     public void setSpell(int spell) {
         if (spell > 0 && spell < 101 ){
             this.spell = spell;
-        } else{
-            throw new IllegalArgumentException
-            ("spell value is invalid, it needs to be more than 0 and equal or less then 100");
+        } else if(spell > 100){
+            this.spell = 100;
+        } else {
+            this.spell = 0;
         }
     }
 

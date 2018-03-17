@@ -67,6 +67,9 @@ public class Battle {
         }
         System.out.println();
         System.out.println();
+        System.out.println("|------------------------ Player Winner Status ------------------------|");
+        System.out.println();
+        System.out.println(winner.toString());
     }
 
     public boolean winnerRest(float valueRest) {
